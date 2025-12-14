@@ -1,6 +1,6 @@
 ## security-portfolio
 
-## Hi, I'm Lauren 👋
+## Hi, I'm Lauren
 I'm transitioning into cloud security / IAM with hands-on labs focused on Microsoft security tooling.
 
 ## Security Labs
