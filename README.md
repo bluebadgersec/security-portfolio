@@ -10,4 +10,4 @@ Security Labs: https://github.com/bluebadgersec/security-portfolio
 Microsoft Entra ID - Conditional Access - Microsoft Sentinel (KQL) - Defender concepts - Log analysis - Incident response basics
 
 ## Current Focus
-Detections, investigations, identity hardening, and security monitoring.
+Detections, investigations, analysis, home labs, and more!
