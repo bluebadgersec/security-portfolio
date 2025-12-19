@@ -1,65 +1,68 @@
-# Defender Incident Summary: <Incident Type>
+# 🚨 Alert Triage: <Alert Name>
 
-**Platform:** Microsoft Defender XDR  
-**Category:** Email / Identity / Endpoint  
-**Outcome:** True Positive / False Positive / Benign  
-
----
-
-## Summary
-State what the alert was and why Defender generated it.
-
-Write 1–2 sentences answering:
-- What type of alert was this?
-- What general behavior triggered it?
-- Why would this normally be considered risky?
+**Platform:** Defender XDR / Sentinel / Entra ID  
+**Severity:** Low / Medium / High  
+**Entity:** User / Device / Mailbox  
+**Outcome:** Escalated / Closed – False Positive / Closed – Benign  
+**Analyst Level:** Tier 1  
+**Framework Alignment:** NIST SP 800-61 · SANS  
 
 ---
 
-## Investigation
-Briefly describe how you looked into the alert.
+## 1️⃣ Alert Summary
+**Purpose:** Capture what fired and who/what is involved.
 
-Write 1–3 sentences answering:
-- Where did you start your investigation in Defender?
-- What type of data did you review (email details, sign-in activity, etc.)?
-- What were you trying to confirm or rule out?
-
----
-
-## Key Findings (Sanitized)
-List the most important facts that influenced your decision.
-
-Each bullet should describe:
-- What actually happened (high-level)
-- Whether security controls blocked or allowed activity
-- Whether anything suspicious happened after the alert
-
-Avoid:
-- Usernames, emails, IPs, timestamps
-- Exact locations or device names
-
-Example bullet structure:
-- “MFA was successfully completed and access was allowed”
-- “No mailbox rules or forwarding changes were detected”
+- **Alert Name:**  
+- **Date/Time:**  
+- **Affected Entity:**  
+- **Why It Triggered (1 line):**  
 
 ---
 
-## Conclusion
-Clearly state the outcome and why.
+## 2️⃣ Quick Validation
+**Purpose:** Decide *real vs noise*.
 
-Write 1–2 sentences answering:
-- How was the alert classified?
-- What was the main reason for that decision?
+**Checks Performed:**
+- ☐ Sign-in location/device consistency  
+- ☐ User activity context (travel, VPN, expected behavior)  
+- ☐ Related alerts or incidents  
+- ☐ Known false-positive pattern  
 
-Example:
-> **Result:** False Positive — Activity aligned with expected user behavior and no follow-on indicators were observed.
+**Findings (brief):**  
+> What stood out as normal or abnormal?
 
 ---
 
-## Takeaways
-Capture 1–2 lessons you’d reuse in the future.
+## 3️⃣ Risk Determination
+**Purpose:** Decide if this needs escalation.
 
-Answer questions like:
-- What signal helped you decide quickly?
-- What would you check first next time?
-- What made this alert less risky than it appeared?
+- **Suspicious Activity Confirmed?** ☐ Yes ☐ No  
+- **Data or Account Risk?** ☐ None ☐ Possible ☐ Confirmed  
+- **Scope Appears Limited?** ☐ Yes ☐ No  
+
+---
+
+## 4️⃣ Action Taken
+**Purpose:** Document immediate response.
+
+- ☐ No action required  
+- ☐ User notified  
+- ☐ Password reset recommended  
+- ☐ Account secured (MFA / reset)  
+- ☐ Escalated to Tier 2  
+
+**Reasoning:**  
+> Why this action (or no action) was appropriate.
+
+---
+
+## 5️⃣ Closure Notes
+**Purpose:** Justify the outcome.
+
+- **Final Outcome:**  
+  ☐ Escalated  
+  ☐ Closed – False Positive  
+  ☐ Closed – Benign Expected Activity  
+
+**One-sentence justification:**  
+> Why this was closed or escalated.
