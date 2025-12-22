@@ -1,46 +1,34 @@
-# 🛡️ Defender Incident Response Walkthrough: <Incident Title>
+# Incident Response
 
 **Platform:** Microsoft Defender XDR  
 
 **Category:**  
-(Identity | Email Security | Endpoint Security | Cloud App Security | Network Security | Privileged Access | Account Compromise | Administrative Activity)
+Initial Access
 
 **Incident Type:**  
-(Impossible Travel | Atypical Sign-In | Phishing Attempt | Spoofed Email | Token Misuse | Password Spray | Suspicious File Sharing | Unauthorized Admin Action)
+Impossible Travel
 
 **Severity:**  
-(Informational | Low | Medium | High | Critical)
+Medium
 
 **Final Classification:**  
-(True Positive | False Positive | Benign Positive | Informational)
+False Positive
 
 **Response Level:**  
-(Investigative | Monitoring Only | Containment Required | Escalated)
+Investigative
 
 **Controls Involved:**  
-(MFA | Conditional Access | Defender XDR | Entra ID Sign-In Logs | Email Filtering | Audit Logging)
+Entra ID, MFA, IP lookup OSINT
 
 ---
 
-## 1️⃣ Identification
-Describe what Defender detected and why the alert was generated.  
-Include the general behavior and why it is normally considered a risk.
-efender flagged USER1 account as Impossible Travel when they logged in from the United States at 9:01pm then a successful login attempt from Switzerland occured at 9:50pm.
+## Identification
+Defender flagged USER1 account as Impossible Travel when they logged in from the United States at 9:01pm then a successful login attempt from Switzerland occured at 9:50pm.
 
 This is considered a Sign In risk because it is not physically possible to travel from the United States to Switzerland in 49 minutes.
 ---
 
-## 2️⃣ Analysis
-Describe how the alert was investigated and validated.
-
-Focus on:
-- What logs or Defender data were reviewed
-- What signals were confirmed or disproven
-- Whether the activity originated from a user, device, or cloud service
-
-Avoid specific identifiers (users, IPs, timestamps).
-
-
+## Analysis
 I started the investigation by cross checking the Defender alert with Entra ID sign in logs around the same timestamp to confirm complete account compromise.
 In Entra ID, I did not see any successful or even attempted logins from outside of the United States for USER1 account. 
 I returned to Defender to dig deeper in to the alert.
@@ -57,39 +45,19 @@ As an additonal safety measure, the Security Engineer turned MFA on for this use
 
 ---
 
-## 3️⃣ Containment
-Describe any containment actions taken.
-
-If none were required, explicitly state why containment was not necessary.
+## Containment
+Containment was not necessary as no account compromise was found.
 
 ---
 
-## 4️⃣ Eradication
-Describe whether any malicious artifacts, sessions, or access needed to be removed.
-
-If not applicable, state that no malicious activity was identified.
+## Eradication
+No malicious activity was identified.
 
 ---
 
-## 5️⃣ Recovery / Remediation
-Describe any preventative or hardening actions taken after analysis.
-
-Examples:
-- MFA enabled
-- Policy adjustments
-- Monitoring recommendations
+## Recovery / Remediation
+User added to MFA group as part of MFA rollout iniative in progress anyway.
 
 ---
 
-## 6️⃣ Lessons Learned
-Capture 2–3 concise takeaways.
-
-Examples:
-- Detection behavior observations
-- Logging or visibility insights
-- Process or response improvements
-
----
-
-## 📌 Resume Signal
-Demonstrates incident response methodology, Defender XDR alert triage, log analysis, security decision-making, and professional documentation.
+## .Lessons Learned
