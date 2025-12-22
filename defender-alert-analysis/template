@@ -1,10 +1,13 @@
-## Defender Incident Response
+## Incident Response
 
-**Platform:** Microsoft Defender XDR  
+**Platform:** Microsoft Defender XDR
+
 **Category:**  
 (Identity | Email Security | Endpoint Security | Cloud App Security | Network Security | Privileged Access | Account Compromise | Administrative Activity)
+
 **Incident Type:**  
 (Impossible Travel | Atypical Sign-In | Phishing Attempt | Spoofed Email | Token Misuse | Password Spray | Suspicious File Sharing | Unauthorized Admin Action)
+
 **Severity:**  
 (Informational | Low | Medium | High | Critical)
 
@@ -19,13 +22,13 @@
 
 ---
 
-## Identification
+## .Identification
 Describe what Defender detected and why the alert was generated.  
 Include the general behavior and why it is normally considered a risk.
 
 ---
 
-## Analysis
+## .Analysis
 Describe how the alert was investigated and validated.
 
 Focus on:
@@ -37,21 +40,21 @@ Avoid specific identifiers (users, IPs, timestamps).
 
 ---
 
-## Containment
+## .Containment
 Describe any containment actions taken.
 
 If none were required, explicitly state why containment was not necessary.
 
 ---
 
-## Eradication
+## .Eradication
 Describe whether any malicious artifacts, sessions, or access needed to be removed.
 
 If not applicable, state that no malicious activity was identified.
 
 ---
 
-## Recovery / Remediation
+## .Recovery / Remediation
 Describe any preventative or hardening actions taken after analysis.
 
 Examples:
@@ -61,7 +64,7 @@ Examples:
 
 ---
 
-## Lessons Learned
+## .Lessons Learned
 Capture 2–3 concise takeaways.
 
 Examples:
