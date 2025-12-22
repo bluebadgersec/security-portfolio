@@ -1,0 +1,95 @@
+# 🛡️ Defender Incident Response Walkthrough: <Incident Title>
+
+**Platform:** Microsoft Defender XDR  
+
+**Category:**  
+(Identity | Email Security | Endpoint Security | Cloud App Security | Network Security | Privileged Access | Account Compromise | Administrative Activity)
+
+**Incident Type:**  
+(Impossible Travel | Atypical Sign-In | Phishing Attempt | Spoofed Email | Token Misuse | Password Spray | Suspicious File Sharing | Unauthorized Admin Action)
+
+**Severity:**  
+(Informational | Low | Medium | High | Critical)
+
+**Final Classification:**  
+(True Positive | False Positive | Benign Positive | Informational)
+
+**Response Level:**  
+(Investigative | Monitoring Only | Containment Required | Escalated)
+
+**Controls Involved:**  
+(MFA | Conditional Access | Defender XDR | Entra ID Sign-In Logs | Email Filtering | Audit Logging)
+
+---
+
+## 1️⃣ Identification
+Describe what Defender detected and why the alert was generated.  
+Include the general behavior and why it is normally considered a risk.
+efender flagged USER1 account as Impossible Travel when they logged in from the United States at 9:01pm then a successful login attempt from Switzerland occured at 9:50pm.
+
+This is considered a Sign In risk because it is not physically possible to travel from the United States to Switzerland in 49 minutes.
+---
+
+## 2️⃣ Analysis
+Describe how the alert was investigated and validated.
+
+Focus on:
+- What logs or Defender data were reviewed
+- What signals were confirmed or disproven
+- Whether the activity originated from a user, device, or cloud service
+
+Avoid specific identifiers (users, IPs, timestamps).
+
+
+I started the investigation by cross checking the Defender alert with Entra ID sign in logs around the same timestamp to confirm complete account compromise.
+In Entra ID, I did not see any successful or even attempted logins from outside of the United States for USER1 account. 
+I returned to Defender to dig deeper in to the alert.
+I noticed that the activity type for the Switzerland activity was referecing sharing a file from OneDrive and adding USER1 to a group.
+I ran the IP address through OSINT tools and it was not flagged as malicious.
+I selected one of the Activity instances and Googled the Event description (sanitizing USER1 information). 
+I learned that since the Source of the activity was showing App Connector, this likely explained that the activity was being performed but Microsofts cloud infrastruture services and not the user account itself. 
+I learned the App Connectors often run from Microsoft datacenters not user locations. 
+I learned that modifying groups activity was an administrative or directory action not a user action.
+
+Once I put together that there was no confirmed account sign ins and the action originated from Microsoft infrastruture, I was confident to report that it was a false positive.
+
+As an additonal safety measure, the Security Engineer turned MFA on for this user. No other action was taken,.
+
+---
+
+## 3️⃣ Containment
+Describe any containment actions taken.
+
+If none were required, explicitly state why containment was not necessary.
+
+---
+
+## 4️⃣ Eradication
+Describe whether any malicious artifacts, sessions, or access needed to be removed.
+
+If not applicable, state that no malicious activity was identified.
+
+---
+
+## 5️⃣ Recovery / Remediation
+Describe any preventative or hardening actions taken after analysis.
+
+Examples:
+- MFA enabled
+- Policy adjustments
+- Monitoring recommendations
+
+---
+
+## 6️⃣ Lessons Learned
+Capture 2–3 concise takeaways.
+
+Examples:
+- Detection behavior observations
+- Logging or visibility insights
+- Process or response improvements
+
+---
+
+## 📌 Resume Signal
+Demonstrates incident response methodology, Defender XDR alert triage, log analysis, security decision-making, and professional documentation.
