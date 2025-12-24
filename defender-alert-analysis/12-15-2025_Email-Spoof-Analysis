@@ -1,6 +1,6 @@
 ## Incident Response
 
-**Platform:** Microsof Defender XDR / Exchange Admin
+**Platform:** Microsoft Defender XDR / Exchange Admin
 
 **Category:**  
 Email Security
@@ -18,7 +18,7 @@ True Positive
 Escalated
 
 **Controls Involved:**  
-Email configuration SFP/DKIM/DMARC, transport rules, message trace
+Email configuration SFP/DKIM/DMARC, transport rules, message trace, Entra ID sign in logs, 
 
 ---
 
@@ -39,7 +39,10 @@ Focus on:
 
 Avoid specific identifiers (users, IPs, timestamps).
 
+Checked USER1 account in Entra ID sign in logs to verify if account was compromised.
+No supicious signins over last 30 days.
 
+Obtained time and date when the meetings were received. 
 
 ---
 
