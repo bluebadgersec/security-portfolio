@@ -42,7 +42,7 @@ I learned that modifying groups activity was an administrative or directory acti
 
 Once I put together that there was no confirmed account sign ins and the action originated from Microsoft infrastruture, I was confident to report that it was a false positive.
 
-As an additonal safety measure, the Security Engineer turned MFA on for this user. No other action was taken,.
+As an additonal safety measure, MFA was turned on for this user. No other action was taken,.
 
 ---
 
