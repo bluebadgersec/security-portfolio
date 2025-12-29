@@ -1,7 +1,7 @@
 ## security-portfolio
 
 ## Hi, I'm Lauren
-I'm transitioning into Security Ops / IAM with hands-on labs focused on Microsoft security tooling.
+I'm transitioning into Security Ops with hands-on labs focused on Microsoft security tooling.
 
 ## Security Labs
 Security Labs: https://github.com/bluebadgersec/security-portfolio
