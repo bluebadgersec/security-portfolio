@@ -1,1 +1,73 @@
+## Incident Response
 
+**Platform:** Microsoft Defender XDR
+
+**Category:**  
+(Identity | Email Security | Endpoint Security | Cloud App Security | Network Security | Privileged Access | Account Compromise | Administrative Activity)
+
+**Incident Type:**  
+(Impossible Travel | Atypical Sign-In | Phishing Attempt | Spoofed Email | Token Misuse | Password Spray | Suspicious File Sharing | Unauthorized Admin Action)
+
+**Severity:**  
+(Informational | Low | Medium | High | Critical)
+
+**Final Classification:**  
+(True Positive | False Positive | Benign Positive | Informational)
+
+**Response Level:**  
+(Investigative | Monitoring Only | Containment Required | Escalated)
+
+**Controls Involved:**  
+(MFA | Conditional Access | Defender XDR | Entra ID Sign-In Logs | Email Filtering | Audit Logging)
+
+---
+
+## Identification
+Describe what Defender detected and why the alert was generated.  
+Include the general behavior and why it is normally considered a risk.
+
+---
+
+## Analysis
+Describe how the alert was investigated and validated.
+
+Focus on:
+- What logs or Defender data were reviewed
+- What signals were confirmed or disproven
+- Whether the activity originated from a user, device, or cloud service
+
+Avoid specific identifiers (users, IPs, timestamps).
+
+---
+
+## Containment
+Describe any containment actions taken.
+
+If none were required, explicitly state why containment was not necessary.
+
+---
+
+## Eradication
+Describe whether any malicious artifacts, sessions, or access needed to be removed.
+
+If not applicable, state that no malicious activity was identified.
+
+---
+
+## Recovery / Remediation
+Describe any preventative or hardening actions taken after analysis.
+
+Examples:
+- MFA enabled
+- Policy adjustments
+- Monitoring recommendations
+
+---
+
+## .Lessons Learned
+Capture 2–3 concise takeaways.
+
+Examples:
+- Detection behavior observations
+- Logging or visibility insights
+- Process or response improvements#
