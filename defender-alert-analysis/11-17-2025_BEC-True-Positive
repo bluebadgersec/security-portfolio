@@ -24,21 +24,31 @@ MFA, Defender XDR, Entra ID Sign-In Logs, Email rules
 
 ## Identification
 First, Defender detected unfamiliar sign in properties and suspicious email rule set to USER1 account. Email rule set was named "." and behavior was to move emails from Inbox to RSS Feeds folder.
+
 Then, Defender detected unusual sign in properties from USER2.
+
 Then, Defender detected unusual sign in properties from USER3. Also flagging brute force and password spray attempts
+
 Lastly, Defender detected 4 malicious emails were sent then remediated by Defender and removed from inboxes.
 
 ---
 
 ## Analysis
-I was responsible for investigating USER3's alert and account.
-First I verified in Entra ID that no successful login attempts had actually occured. I did see foreign attempts at logging in to the account but none successful.
+I was responsible for investigating and remediating activity related to USER3.
+
+Entra ID sign-in logs were reviewed to determine whether any successful interactive or non-interactive authentication had occurred for the account. While multiple foreign login attempts were observed, no successful sign-ins were identified.
+
+Based on the broader incident context and the nature of the attack affecting other users, the account was treated as potentially at risk despite no confirmed compromise.
+
+Findings were reported to the security team, and containment actions were initiated per incident response guidance.
 
 
 ---
 
 ## Containment
 Walked user through resetting password and enrolling in MFA.
+
+These actions were taken to prevent potential future compromise and lateral movement.
 
 ---
 
@@ -48,14 +58,11 @@ No direct malicious activity for my user.
 ---
 
 ## Recovery / Remediation
-Password reset, MFA enabled.
+The account was secured through credential reset and MFA enforcement. No further remediation was required for this user.
 
 ---
 
 ## .Lessons Learned
-Capture 2–3 concise takeaways.
-
-Examples:
-- Detection behavior observations
-- Logging or visibility insights
-- Process or response improvements#
+- Multi-user incidents can impact accounts at different stages of compromise
+- Defender incident timelines may not reflect chronological event order
+- Preventative containment is appropriate even when compromise is not confirmed
