@@ -6,7 +6,7 @@
 Initial access, Persistence, Defense evasion, Credential access, Collection
 
 **Incident Type:**  
-BEC fraud, AiTM
+BEC fraud, AiTM, Brute force, Password spray
 
 **Severity:**  
 High
@@ -23,8 +23,12 @@ MFA, Defender XDR, Entra ID Sign-In Logs, Email rules
 ---
 
 ## Identification
-Describe what Defender detected and why the alert was generated.  
-Include the general behavior and why it is normally considered a risk.
+First, Defender detected unfamiliar sign in properties and suspicious email rule set to USER1 account. Email rule set was named "." and behavior was to move emails from Inbox to RSS Feeds folder.
+Then, Defender detected unusual sign in properties from USER2.
+Then, Defender detected unusual sign in properties from USER3. Also flagging brute force and password spray attempts
+Lastly, Defender detected 4 malicious emails were sent then remediated by Defender and removed from inboxes.
+
+
 
 ---
 
